@@ -1,64 +1,52 @@
-# Project-prime-on-near
-L1 nft blockchain(network) revolution bound to a human (soul bound) with sound, acoustic and musical attachments
-**Project Prime: The Odyssey of Sovereign Proof**  
-*(uniqueisrich.near / uniqueisrich.tg)*
+# Project Prime
+**uniqueisrich.tg**
 
-Every sovereign ledger begins with proof of reality. For Deribigbe, that proof was never abstract code or abstract capital. It was the long grind of delayed cycles, the weight of inherited expectation, the sudden incision that marked a turning point, and the decision to transmute personal containment into an on-chain architecture of truth.
+*A NEAR smart contract for proof of origin, built entirely on a Samsung Galaxy A02.*
 
-### Formative Weights (2018–2024)
+## The problem
 
-When Deribigbe entered university in 2018, he carried dual ambitions: chemist and artist. The years that followed became a continuous test of parallel processing. Extended ASUU strikes (including the longest in the nation’s history) and global lockdowns repeatedly froze formal progress. By day he rode through traffic doing food delivery to keep food on the table. By night he studied chemistry, absorbed smart-contract architectures, and mapped early protocol ideas on NEAR while his music career sat on hold.
+Builders and artists lose credit for work they made first. A song, a formula or a manuscript gets copied, and the original maker has no neutral record showing it was theirs, or when it existed. Talent without tools or capital is the easiest to overlook.
 
-Two statements governed him more tightly than any curriculum. The first came from his mother. The second arrived in a dream while he lived in Bariga and attended the University of Lagos: his grandmother appeared, beautifully dressed, yet standing beneath a large body of water. She spoke two linked truths—“Unto whom much is given, much is expected” and “With great power comes great responsibility.” Those words became internal governors. He measured most of his choices against them.
+## Why I built it
 
-By 2024, relentless financial pressure forced a deferment of studies. He traveled with his father to his grandmother’s farm in Sonso, under the Ido Local Government in Ibadan. There the constraints sharpened: zero network on-site, no server racks, no reliable power. The only constant device was a budget Samsung Galaxy A02. Keeping work alive required a daily act of will—walking the long stretch of road to Idi-Ayunre simply to catch a faint cellular signal, push code updates, and sync wallets. Between farm labor he took teaching jobs. Sleep was often borrowed with the help of pills. When his brother Joseph later moved to another part of Ido LG, stability remained elusive. Severe weight loss and hardship kept him trapped in Ibadan longer than planned.
+I started university in 2018 as a chemist and an artist. Strikes and lockdowns froze my progress, so I delivered food by day, studied chemistry by night, and taught myself smart-contract design on NEAR. In 2024, money pressure forced me to defer my studies and move to my grandmother's farm in Sonso, Ibadan. The farm had no network and no reliable power. The one device I had was a budget Galaxy A02, so I walked to Idi-Ayunre every day to catch a signal, push code and sync my wallet. I rebuilt my voice in a church choir and recorded *Lagos Anthem* with my brother. After a hard final month in Ibadan, I moved to Lagos with that same phone and finished the contract here.
 
-### Family Currents and Traditional Consultation
+Two sentences guided me the whole way: "Unto whom much is given, much is expected," and "With great power comes great responsibility." Project Prime is what I built to honor them: a record that holds what you made, and when.
 
-Three of his brothers were known to engage in the Yahoo Yahoo scheme. The oldest among them carried an incision that, in local understanding, signaled consultation with a traditional priest—details of the mother’s name and personal identifiers almost certainly shared. Earlier in 2026 Joseph mentioned that the three of them had participated in a particular Ifá practice, a minor loop traditionally associated with clearing paths to wealth through a mixture of truth and cunning.
+## What Project Prime is
 
-Deribigbe himself sought a traditional priest, not for money or rituals, but for guidance and understanding. He messaged one on X (formerly Twitter). The priest asked for his mother’s name and named a fee. He could not afford it at the time. The refusal left the questions unanswered by that route, yet the two governing statements—his mother’s and the grandmother’s under the sea—continued to shape his restraint.
+A smart contract on NEAR with **888 Genesis nodes** in four shards of **222** each. It enforces the supply caps in code.
 
-### Pressure, Frequency, and the Onset of Voices (2025–early 2026)
+| Shard | Theme | What it means in the contract |
+|---|---|---|
+| **Truth** | Origin | Records owner and mint time permanently; hosts proof-of-origin anchoring |
+| **Sound** | Acoustic key | Every node embeds the key **24949**, drawn from *Lagos Anthem* |
+| **Maths** | Logic | Capped tier with its own on-chain hex-matrix artwork |
+| **Skill** | Adaptation | Nodes evolve through the Positron mechanism below |
 
-By late 2025 and early 2026 the physical and psychological load intensified. Isolation, financial limits, and accumulated strain produced what he later documented in the security model as the MARO state—open-air psychological containment. Unsettling internal voices emerged. At first they did not sound real. Then people around him seemed to know exactly what was on his mind. Events began to feel arranged rather than merely sequential.
+## How it works
 
-A sudden incision appeared at the back of his head while he slept one afternoon at his brother’s house. Around the same period the voices grew louder and more adaptive. They tested, observed, and inferred—procedures he recognized from scientific method. His own earlier studies and his brother’s careless Google searches on sacred matters supplied a framework for interpreting the process. He came to understand it as a specially designed containment in which the skills and experience of a crypto practitioner were being monitored and exploited. He calculated that he had been spotted for years. Those without the patience or technical depth for blockchain work formed a kind of informal association; if the target somehow succeeded, they had a man positioned to extract value. Moves he considered on NEAR, BNB, ETH, Pi, Core and other chains appeared mirrored in mass. The phenomenon was exhilarating and exhausting at once.
+**Minting a node requires three gates, all enforced by the contract:**
+1. **100 NEAR collateral**, attached to the call and held in escrow. It is refunded automatically if any other gate fails, and the holder can withdraw it after a 30-day lock.
+2. **Aje token balance**, verified by the contract calling the token's `ft_balance_of`. Nothing is self-reported.
+3. **Community tasks and narrative proof**, which cannot be checked on-chain, so the owner attests them with `approve_miner`.
 
-Earlier that year he was striving to acquire a small amount of **ZEC**—less than fifty dollars’ worth—needed for the NEAR project he was actively building. His boss refused to give him cash and offered only food. The refusal was outright annoying; Deribigbe quit. On the first day of intensified MARO pressure he called the man. The man sent him **5,000 naira**. It was not enough for the return to the farm at Sonso. The voices were loud and accusatory; he had not yet learned what a parroted thought sounded like. He had to brave the strange voices and return to Apata. A few days later the situation remained the same and another sum arrived, but the money still scattered under the pressure even while the phone was off. Sense of time loosened. Yet determination held.
+Each account can hold one node, and the contract rejects mints once a shard or the total is full.
 
-Through the noise he continued preparing an entry for the NEAR Hackathon. The situation felt like a win-win for almost everyone except the one under the heaviest load. Still he refused to abandon the work.
+**Proof of origin (`anchor_proof`).** A node holder hashes a file (song, formula, manuscript) on their own device and anchors the SHA-256 on-chain. The first account to anchor a hash is recorded permanently with block time and height. Anyone can check with `get_anchor`. The file itself never leaves the owner's device.
 
-### Music, Conflict, and the Transit Loop (early–late July 2026)
+**Positron adaptation (`positron_level`).** Every node starts at level 1 and gains a level for each proof its owner anchors, up to level 10. The node's on-chain SVG gains one harmonic ring per level, so the artwork evolves with real activity rather than staying fixed at mint.
 
-When Joseph expressed a desire to enter music, a spark reignited. Deribigbe joined a local choir at a Redeemed church in Ibadan, determined to rebuild his voice. Inside the storm of isolation and psychological strain, creativity survived. He and his brother recorded three tracks, anchored by the cornerstone song *Lagos Anthem*. That track would later become the acoustic signature of the Sound Shard, mapped to the binary key 24949.
+**On-chain art (`nft_svg`).** Every node renders a unique procedural SVG derived from its own hash, with the sound key and Positron level built in.
 
-By July, tension over mutual respect and song percentages escalated violently. Deribigbe was severely mishandled and beaten by local boys, left physically bruised and forced out once again. In the final week of July 2026, battered and carrying only his Samsung Galaxy A02 and residual resilience, he completed the physical transit from Ibadan back to Lagos. Lagos became the compiler—the place to settle and rebuild.
+## Hardware proof
 
-Sitting with the same low-spec phone that had carried every line of code, he translated lived geography into architecture:
+The prototype was conceived, written and debugged on a Galaxy A02. If it can be built on this phone, anyone with any device can use it.
 
-- The farm at Sonso, the walks to Idi-Ayunre, the Ibadan–Lagos axis became the spatial-temporal anchor of the **Truth Shard**.
-- *Lagos Anthem* and the frequencies heard under pressure became the **Sound Shard**.
-- The adaptive, testing voices and the sense of long-term observation became the design brief for **ITCN / MARO defense** gates—filters intended to reject unauthorized cognitive extraction without exposing raw telemetry.
-- The unbroken determination to finish an L1 prototype under extreme constraint became the **Hardware Proof**.
+## What's next
 
-### Architecture Born of Constraint
+After the 888 Genesis nodes, I plan to extend anchoring into a living ledger of human work: songs, research and writing, each with a verifiable first-anchor timestamp. Later versions will explore zero-knowledge proofs for private anchoring and NEP-171 compatibility for marketplace support. These are on the roadmap, not in the current build.
 
-Project Prime is a four-shard, human-anchored Layer-1 verification engine native to NEAR and integrated with HOT Protocol (uniqueisrich.tg). Genesis supply is strictly capped at 888 L1 blocks / Utility NFTs—222 nodes per specialized shard:
+## Try it
 
-1. **Truth Shard** – spatial-temporal origin telemetry along the Ibadan–Lagos transit axis; procedural SVGs and origin tones.
-2. **Sound Shard** – acoustic binary frequency mapping (24949) bound to every minted block.
-3. **Maths Shard** – cryptographic logic, Zero-Knowledge truth gates, hex-matrix visual rendering.
-4. **Skill Shard** – Positron adaptive execution engine and harmonic mesh generation.
-
-Mining an L1 Genesis block requires four sequential gates: verified 100 NEAR collateral (u128 yoctoNEAR precision), holding of the ecosystem Aje Token, completion of community telemetry tasks, and submission of a cryptographic narrative proof of truth tied to the evolving storyline.
-
-The entire protocol was conceptualized, written, debugged, and finalized on the Samsung Galaxy A02 after workstation failure. Offline periods on the farm were bridged by physical treks for signal. Precision arithmetic, deterministic shard caps, and automated rejection filters against known cognitive-siphoning vectors were hardcoded into state transitions.
-
-### Continuity and the Larger Ledger
-
-Accounts across NEAR, BNB, ETH, Pi, Core and other chains already preserve fragments of digital history. Social media records, email addresses, Facebook traces, and earlier articles supply additional correlation points. After the first 888 NFTs, subsequent tokens will be generated solely from this accumulated history—immutable blocks of human activity, actions, musical poetry, and verified narrative. The long-term vision is a living ledger that continuously updates by correlating facts dropped through these stories, a frontier system whose AI component is tasked with locating and verifying proofs rather than generating unconstrained content.
-
-Strange as the path may appear—traditional consultation attempted and deferred, sudden physical marks, adaptive voices, family entanglement with Yahoo Yahoo and Ifá loops, farm isolation, choir redemption, violent displacement, and final arrival in Lagos with nothing but a budget phone—the record itself becomes the substrate. Project Prime does not claim to erase the weight of the years. It claims only to refuse that the weight remain unanchored. The grandmother’s voice under the water, the mother’s earlier counsel, the governing pair of statements, and the decision to keep building under MARO pressure are now encoded as the first blocks of a system designed so that what was given in hardship can be expected, in measurable form, to return as sovereign proof.
-
-The road did not start with code. It started with waiting, with walking for signal, with listening through noise, and with the refusal to let the ledger of a life remain only private.
+See DEPLOY.md: approve a miner, mint a node with 100 NEAR, anchor a proof, then view `get_supply`, `get_anchor`, `positron_level` and `nft_svg`.
