@@ -1,0 +1,52 @@
+//! Project Prime (uniqueisrich.near)
+//! 888 Genesis nodes across 4 shards (222 each).
+//!
+//! Gates to mine a node:
+//!  1. Collateral: exactly 100 NEAR attached to the call, escrowed in this contract
+//!     (real, on-chain, cannot be faked by passing JSON).
+//!  2. Aje token: verified by a cross-contract ft_balance_of call (> 0).
+//!  3. Community tasks + narrative proof: attested on-chain by the owner via
+//!     `approve_miner` (these are off-chain facts, so the owner signs off honestly).
+//!
+//! NOTE: not yet compiled/tested in the authoring environment. Run `cargo build`
+//! and fix any small API mismatches before deploying.
+
+use near_sdk::json_types::U128;
+use near_sdk::store::{IterableMap, LookupMap, LookupSet};
+use near_sdk::{
+    env, ext_contract, near, require, AccountId, Gas, NearToken, PanicOnDefault, Promise,
+    PromiseError,
+};
+
+pub const GLOBAL_CAP: u32 = 888;
+pub const SHARD_CAP: u32 = 222;
+pub const SOUND_KEY: u32 = 24949; // 0110000101110101
+pub const COLLATERAL: NearToken = NearToken::from_near(100);
+pub const LOCK_NS: u64 = 30 * 24 * 60 * 60 * 1_000_000_000; // 30 days
+
+#[near(serializers = [json, borsh])]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum Shard {
+    Truth,
+    Sound,
+    Maths,
+    Skill,
+}
+
+impl Shard {
+    fn index(&self) -> usize {
+        match self {
+            Shard::Truth => 0,
+            Shard::Sound => 1,
+            Shard::Maths => 2,
+            Shard::Skill => 3,
+        }
+    }
+    fn name(&self) -> &'static str {
+        match self {
+            Shard::Truth => "TRUTH",
+            Shard::Sound => "SOUND",
+            Shard::Maths => "MATHS",
+            Shard::Skill => "SKILL",
+        }
+    }
